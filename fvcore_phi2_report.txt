@@ -1,0 +1,1347 @@
+PhiForCausalLM(
+  #params: 2.78G, #flops: 31.8G
+  (model): PhiModel(
+    #params: 2.65G, #flops: 30.23G
+    (embed_tokens): Embedding(
+      51200, 2560
+      #params: 0.13G, #flops: 0
+    )
+    (embed_dropout): Dropout(p=0.0, inplace=False)
+    (layers): ModuleList(
+      #params: 2.52G, #flops: 30.23G
+      (0): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (4): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (5): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (6): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (7): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (8): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (9): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (10): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (11): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (12): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (13): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (14): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (15): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (16): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (17): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (18): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (19): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (20): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (21): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (22): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (23): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (24): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (25): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (26): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (27): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (28): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (29): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (30): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+      (31): PhiDecoderLayer(
+        #params: 78.67M, #flops: 0.94G
+        (self_attn): PhiAttention(
+          #params: 26.22M, #flops: 0.32G
+          (q_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (k_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (v_proj): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (dense): Linear(
+            in_features=2560, out_features=2560, bias=True
+            #params: 6.56M, #flops: 78.64M
+          )
+          (rotary_emb): PhiRotaryEmbedding()
+        )
+        (mlp): PhiMLP(
+          #params: 52.44M, #flops: 0.63G
+          (activation_fn): NewGELUActivation()
+          (fc1): Linear(
+            in_features=2560, out_features=10240, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+          (fc2): Linear(
+            in_features=10240, out_features=2560, bias=True
+            #params: 26.22M, #flops: 0.31G
+          )
+        )
+        (input_layernorm): LayerNorm(
+          (2560,), eps=1e-05, elementwise_affine=True
+          #params: 5.12K, #flops: 0.15M
+        )
+        (resid_dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (final_layernorm): LayerNorm(
+      (2560,), eps=1e-05, elementwise_affine=True
+      #params: 5.12K, #flops: 0.15M
+    )
+  )
+  (lm_head): Linear(
+    in_features=2560, out_features=51200, bias=True
+    #params: 0.13G, #flops: 1.57G
+  )
+)
+| module                          | #parameters or shape   | #flops    |
+|:--------------------------------|:-----------------------|:----------|
+| model                           | 2.78G                  | 31.801G   |
+|  model                          |  2.649G                |  30.228G  |
+|   model.embed_tokens            |   0.131G               |   0       |
+|    model.embed_tokens.weight    |    (51200, 2560)       |           |
+|   model.layers                  |   2.517G               |   30.227G |
+|    model.layers.0               |    78.671M             |    0.945G |
+|    model.layers.1               |    78.671M             |    0.945G |
+|    model.layers.2               |    78.671M             |    0.945G |
+|    model.layers.3               |    78.671M             |    0.945G |
+|    model.layers.4               |    78.671M             |    0.945G |
+|    model.layers.5               |    78.671M             |    0.945G |
+|    model.layers.6               |    78.671M             |    0.945G |
+|    model.layers.7               |    78.671M             |    0.945G |
+|    model.layers.8               |    78.671M             |    0.945G |
+|    model.layers.9               |    78.671M             |    0.945G |
+|    model.layers.10              |    78.671M             |    0.945G |
+|    model.layers.11              |    78.671M             |    0.945G |
+|    model.layers.12              |    78.671M             |    0.945G |
+|    model.layers.13              |    78.671M             |    0.945G |
+|    model.layers.14              |    78.671M             |    0.945G |
+|    model.layers.15              |    78.671M             |    0.945G |
+|    model.layers.16              |    78.671M             |    0.945G |
+|    model.layers.17              |    78.671M             |    0.945G |
+|    model.layers.18              |    78.671M             |    0.945G |
+|    model.layers.19              |    78.671M             |    0.945G |
+|    model.layers.20              |    78.671M             |    0.945G |
+|    model.layers.21              |    78.671M             |    0.945G |
+|    model.layers.22              |    78.671M             |    0.945G |
+|    model.layers.23              |    78.671M             |    0.945G |
+|    model.layers.24              |    78.671M             |    0.945G |
+|    model.layers.25              |    78.671M             |    0.945G |
+|    model.layers.26              |    78.671M             |    0.945G |
+|    model.layers.27              |    78.671M             |    0.945G |
+|    model.layers.28              |    78.671M             |    0.945G |
+|    model.layers.29              |    78.671M             |    0.945G |
+|    model.layers.30              |    78.671M             |    0.945G |
+|    model.layers.31              |    78.671M             |    0.945G |
+|   model.final_layernorm         |   5.12K                |   0.154M  |
+|    model.final_layernorm.weight |    (2560,)             |           |
+|    model.final_layernorm.bias   |    (2560,)             |           |
+|  lm_head                        |  0.131G                |  1.573G   |
+|   lm_head.weight                |   (51200, 2560)        |           |
+|   lm_head.bias                  |   (51200,)             |           |
