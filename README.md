@@ -81,6 +81,7 @@ PhiForCausalLM(
 |**Input Shape**|
 |b| Batch size| 1|
 |s| Sequence lenghth | 1|    |   |
+|M| Size of SRAM|1|
 |**Model Hyper-parameter**|
 |n| Number of attention heads| 1| 32
 |d|Hidden state size of one head| 1|64
@@ -93,7 +94,7 @@ PhiForCausalLM(
 
 
 
-## Table of self-attention 
+## Table of self-attention
 
 |Symbol| Definition| Shape| value| FLOPS | IO | FLOPS:IO|
 |------------|-----------|-------|-----|----------|---------|-----|
@@ -110,7 +111,7 @@ PhiForCausalLM(
 |A|Reshape A<sup>^</sup>|(b,s,h)|
 |Y|AW<sub>O</sub>|(b,s,h)|(b,s,2048)| 2bsh<sup>2</sup>|2bsh+h<sup>2</sup>|
 |**MLP**|
-|Z|(YW<sub>1</sub>)W<sub>2</sub>|(b,s,h)|(b,s,2048)|64bsh<sup>2</sup>|4bsh+16h<sup>2</sup>|
+|Z|GELU(YW<sub>1</sub>)W<sub>2</sub>|(b,s,h)|(b,s,2048)|64bsh<sup>2</sup>|4bsh+16h<sup>2</sup>|
 |**Input**|
 |x| Input for self attention| (b,1,h)|
 |K<sub>s</sub>, V<sub>S</sub>|Key/Value cache from past| (b,n,s,d)|
@@ -120,17 +121,61 @@ PhiForCausalLM(
 |q, k, v|Transpose q<sup>^</sup>, k<sup>^</sup>, v<sup>^</sup>|(b,n,1,d)|
 |K, V|concat(K<sub>s</sub>,k), concat(V<sub>s</sub>, v)|(b,n,s+1,d)|
 |K<sup>T</sup>|Transpose K|(b,n,d,s+1)|
-|p|Softmax(qK<sup>T</sup>/sqrt(d))|(b,n,1,s+1)| (b,32,1,s+1)|3nbs<sup>2</sup>|bsn+bsnd+bnd|
-|a<sup>^^</sup>|pV|(b,n,s,d)|(b,32,s,64)|2bs<sup>2</sup>nd| 2bsnd+bs<sup>2</sup>n|
-|a<sup>^</sup>|Transpose A<sup>^^</sup>|(b,s,n,d)|
-|a|Reshape A<sup>^</sup>|(b,s,h)|
-|y|AW<sub>O</sub>|(b,s,h)|(b,s,2048)| 2bsh<sup>2</sup>|2bsh+h<sup>2</sup>|
+|p|Softmax(qK<sup>T</sup>/sqrt(d))|(b,n,1,s+1)| (b,32,1,s+1)|3bsnd|bsn+bsnd+bnd|
+|a<sup>^^</sup>|pV|(b,n,1,d)|(b,32,1,64)|2bsnd| bsn+bsnd+bnd|
+|a<sup>^</sup>|Transpose A<sup>^^</sup>|(b,1,n,d)|(b,1,32,64)|
+|a|Reshape A<sup>^</sup>|(b,1,h)|
+|y|AW<sub>O</sub>|(b,1,h)|(b,1,2048)| 2bh<sup>2</sup>|2bh+h<sup>2</sup>|
 |**MLP**|
-|z|(yW<sub>1</sub>)W<sub>2</sub>|(b,s,h)|(b,s,2048)|64bsh<sup>2</sup>|4bsh+16h<sup>2</sup>|
-
-
+|z|GELU(yW<sub>1</sub>)W<sub>2</sub>|(b,1,h)|(b,1,2048)|64bh<sup>2</sup>|4bh+16h<sup>2</sup>|
 
 ## With FlashAttention
+Based on this implementation https://huggingface.co/microsoft/phi-1/blob/main/modeling_phi.py. Flash_attention is used after Q, K, V transpose.
+
+|Symbol| Definition| Shape| value| FLOPS | IO | FLOPS:IO|
+|------------|-----------|-------|-----|----------|---------|-----|
+|**Input**|
+|X| Input for self attention| (b,s,h)|(b,s,2048)|
+|**Flash-Attention**|
+|Q<sup>^^</sup>, K<sup>^^</sup>, V<sup>^^</sup>|XW<sub>Q</sub>, XW<sub>K</sub>, XW<sub>V</sub>| (b, s, h)| (b, s, 2048)|3*2bsh<sup>2</sup>|3(2bsh + h<sup>2</sup>)|
+|Q<sup>^</sup>, K<sup>^</sup>, V<sup>^</sup>|Reshape Q<sup>^^</sup>, K<sup>^^</sup>, V<sup>^^</sup>|(b,s,n,d)|
+|Q, K, V|Transpose Q<sup>^</sup>, K<sup>^</sup>, V<sup>^</sup>|(b,n,s,d)|
+|K<sup>T</sup>|Transpose K|(b,n,d,s)|
+|A=flash_atttion(Q,K,V)|flash attention|(b, s, h)|(b, s, 2048)|3nbs<sup>2</sup> + 2bs<sup>2</sup>nd|s<sup>2</sup>d<sup>2</sup>/M
+|Y|AW<sub>O</sub>|(b,s,h)|(b,s,2048)| 2bsh<sup>2</sup>|2bsh+h<sup>2</sup>|
+|**MLP**|
+|Z|GELU(YW<sub>1</sub>)W<sub>2</sub>|(b,s,h)|(b,s,2048)|64bsh<sup>2</sup>|4bsh+16h<sup>2</sup>|
+|**Input**|
+|x| Input for self attention| (b,1,h)|
+|K<sub>s</sub>, V<sub>S</sub>|Key/Value cache from past| (b,n,s,d)|
+|**Flash-Attention**|
+|q<sup>^^</sup>, k<sup>^^</sup>, v<sup>^^</sup>|xW<sub>Q</sub>, xW<sub>K</sub>, xW<sub>V</sub>| (b, 1, h)| (b, 1, 2048)|3*2bh<sup>2</sup>|3(2bh + h<sup>2</sup>)|
+|q<sup>^</sup>, k<sup>^</sup>, v<sup>^</sup>|Reshape q<sup>^^</sup>, k<sup>^^</sup>, v<sup>^^</sup>|(b,1,n,d)|
+|q, k, v|Transpose q<sup>^</sup>, k<sup>^</sup>, v<sup>^</sup>|(b,n,1,d)|
+|K, V|concat(K<sub>s</sub>,k), concat(V<sub>s</sub>, v)|(b,n,s+1,d)|
+|K<sup>T</sup>|Transpose K|(b,n,d,s+1)|
+|a=flash_atttion(Q,K,V)|flash attention|(b, s, h)|(b, s, 2048)|5bsnd|s<sup>2</sup>d<sup>2</sup>/M
+|y|aW<sub>O</sub>|(b,1,h)|(b,1,2048)| 2bh<sup>2</sup>|2bh+h<sup>2</sup>|
+|**MLP**|
+|z|GELU(yW<sub>1</sub>)W<sub>2</sub>|(b,1,h)|(b,1,2048)|64bh<sup>2</sup>|4bh+16h<sup>2</sup>|
+
+
+
+## Result analysis
+Please note that the tables above is only considering the forward passing. For the backward passing, the flash attention will recompute the S and P. The FLOPS may be higher than self-attention. However, if we denote all these numbers in Big O notation. The result will be consistent. 
+
+If we compare these two tables. we know that all steps other than attention part are exactlly the same. So the 
+
+
+## Reference
+- https://arxiv.org/pdf/1706.03762.pdf
+- https://arxiv.org/pdf/2205.14135.pdf
+- https://kipp.ly/transformer-inference-arithmetic/#capacity
+- https://www.adamcasson.com/posts/transformer-flops
+- https://le.qun.ch/en/blog/2023/05/13/transformer-batching/
+
+
+
 
 
 
