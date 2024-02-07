@@ -162,9 +162,18 @@ Based on this implementation https://huggingface.co/microsoft/phi-1/blob/main/mo
 
 
 ## Result analysis
-Please note that the tables above is only considering the forward passing. For the backward passing, the flash attention will recompute the S and P. The FLOPS may be higher than self-attention. However, if we denote all these numbers in Big O notation. The result will be consistent. 
+- Only forward passing is considered in the tables
+   For the backward passing, the flash attention will recompute the S and P. The FLOPS may be higher than self-attention. However, if we denote all these numbers in Big O notation. The result will be consistent. 
+- If we compare these two tables. we know that all steps other than attention part are exactlly the same. So and the FLOPS of two algrothem are at the same big O level. However, the IOS is 1/M (M is the size of SRAM) of the standard self-attention. 
 
-If we compare these two tables. we know that all steps other than attention part are exactlly the same. So the 
+- Given the phi-1 model structure, we can compute the arithmetic intensity between standard self-attention and flash attention. The following table is only considering the inference (auto-regression).
+
+|Algrithem|FLOPS|IOS|Arithmetic Intensity|
+|--|--|--|--|
+|flash attention|5bsnd|s<sup>2</sup>d<sup>2</sup>/M|5bM/(sd)|
+|standard self-attention|5bsnd|2bsn+2bsnd+bnd|5sd/(2s+2sd+d)
+
+So the arthmetic intensity of flash attention is related to size of the SRAM. Based on the flash attention paper, we can expect around 3X speed up.
 
 
 ## Reference
