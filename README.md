@@ -97,7 +97,6 @@ PhiForCausalLM(
 
 |Symbol| Definition| Shape| value| FLOPS | IO | FLOPS:IO|
 |------------|-----------|-------|-----|----------|---------|-----|
-|**Training**|
 |**Input**|
 |X| Input for self attention| (b,s,h)|(b,s,2048)|
 |**Self-Attention**|
@@ -112,7 +111,6 @@ PhiForCausalLM(
 |Y|AW<sub>O</sub>|(b,s,h)|(b,s,2048)| 2bsh<sup>2</sup>|2bsh+h<sup>2</sup>|
 |**MLP**|
 |Z|(YW<sub>1</sub>)W<sub>2</sub>|(b,s,h)|(b,s,2048)|64bsh<sup>2</sup>|4bsh+16h<sup>2</sup>|
-|**Inference**|
 |**Input**|
 |x| Input for self attention| (b,1,h)|
 |K<sub>s</sub>, V<sub>S</sub>|Key/Value cache from past| (b,n,s,d)|
