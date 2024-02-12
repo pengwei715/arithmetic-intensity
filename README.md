@@ -176,6 +176,18 @@ Based on this implementation https://huggingface.co/microsoft/phi-1/blob/main/mo
 So the arthmetic intensity of flash attention is related to size of the SRAM. Based on the flash attention paper, we can expect around 3X speed up.
 
 
+## DRAM vs SRAM
+
+These two terms are types of hardwares. Both SRAM (Static Random Access Memory) and DRAM (Dynamic RAM) are types of random access memory (RAM).
+
+
+## What's on-chip SRAM in the paper?
+
+on-chip SRAM = SM's L1 shred memory * number of SM
+
+On the paper, A100 is used. So this number is 192kb * 108 (sm) = 20 mb
+
+
 ## Reference
 - https://arxiv.org/pdf/1706.03762.pdf
 - https://arxiv.org/pdf/2205.14135.pdf
